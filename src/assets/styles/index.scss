@@ -42,10 +42,10 @@ body {
       border-radius: 8px;
       display: flex;
       justify-content: space-around;
+      align-content: center;     
       -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
       li {
-        text-align: center;
         padding-bottom: 5px;
         color: #222;
         font-size: 12px;
@@ -81,12 +81,11 @@ body {
       box-sizing: -webkit-border-box;
       .nav-common {
         height: 65px;
-
         display: flex;
         .nav-item {
           text-align: center;
           box-sizing: border-box;
-          margin: 0 1px 1px 0;
+          border-left: 1px solid #fff;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -116,14 +115,14 @@ body {
           background-image: url("../hotel.png");
           background-repeat: no-repeat;
           background-size: 50% auto;
-          background-position: 80px 27px;
+          background-position: 100% 100%;
         }
         .item2 {
           background-color: rgba(251, 129, 80);
           background-image: url("../mini.png");
           background-repeat: no-repeat;
           background-size: 40% auto;
-          background-position: 0 40px;
+          background-position: 0 100%;
         }
         .item3 {
           flex: 2;
@@ -131,7 +130,7 @@ body {
           background-image: url("../hot.png");
           background-repeat: no-repeat;
           background-size: 100% auto;
-          background-position: -2px -23px;
+          background-position: 0 100%;
           span {
             color: rgba(191, 116, 22);
           }
@@ -141,14 +140,14 @@ body {
           background-image: url("../grid-nav-items-flight.png");
           background-repeat: no-repeat;
           background-size: 50% auto;
-          background-position: 87px 27px;
+          background-position: 100% 100%;
         }
         .item5 {
           background-color: rgba(79, 166, 237);
           background-image: url("../grid-nav-items-train.png");
           background-repeat: no-repeat;
-          background-size: 50% auto;
-          background-position: -1px 35px;
+          background-size: 35% auto;
+          background-position: 0% 100%;
         }
         .item6,
         .item7 {
@@ -160,14 +159,14 @@ body {
           background-image: url("../grid-nav-items-travel.png");
           background-repeat: no-repeat;
           background-size: 50% auto;
-          background-position: 87px 20px;
+          background-position: 100% 100%;
         }
         .item9 {
           background-color: rgba(79, 203, 131);
           background-image: url("../grid-nav-items-dingzhi.png");
           background-repeat: no-repeat;
           background-size: 50% auto;
-          background-position: 0px 45px;
+          background-position: 0% 100%;
         }
         .item10,
         .item11 {
@@ -177,21 +176,20 @@ body {
     }
     /*  主导航 end */
     .main-nav {
-      max-height:105px;
-      overflow: hidden;
       padding-left: 0;
+      height: 116px;
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       align-content: space-between;
       box-sizing: border-box;
-      margin: 0 12px 12px 12px;
+      margin: 12px;
       li {
-        width:88px;
-        min-width: 48px;
-        max-width:105px;
+        flex: 20%;
         height: 53px;
-        float: left;
+        min-width: 48px;
+        max-width: 98px;
+        display: block;
+        font-size: 13px;
         text-align: center;
         box-sizing: border-box;
         &:nth-child(n + 1)::before {
@@ -239,7 +237,7 @@ body {
       margin: 0 10px;
       box-sizing: border-box;
       background-color: #fff;
-      border-top: 1px solid #dbdbdb;
+      border-top: 1px solid #f2f2f2;
       padding: 0 8px;
       display: flex;
       flex-direction: row;
@@ -257,7 +255,7 @@ body {
           transform: translateY(18%);
           background: url("../un_home_text.png") no-repeat;
           background-size: 100%;
-          background-position: 0 -20px;
+          background-position: 0 50%;
         }
       }
       i::before {
@@ -275,8 +273,9 @@ body {
         font-size: 12px;
         text-align: right;
         color: #fff;
+        position: relative;
         span {
-          padding: 1px 5px 1px 12px;
+          padding: 3px 15px 3px 12px;
           border-radius: 10px;
           background: -webkit-gradient(
             linear,
@@ -286,6 +285,19 @@ body {
             to(#ff6cc9)
           );
           background: linear-gradient(to right, #ff4e63, #ff6cc9);
+          &::after {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-top: 1px solid #fff;
+            border-right: 1px solid #fff;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            transform: translate(50%, 50%);
+            transform: rotate(45deg);
+          }
+          /* 尖括号 */
         }
       }
     }
@@ -297,7 +309,7 @@ body {
       border-top: 1px solid #f2f2f2;
       display: flex;
       div:first-child {
-        width: 260px;
+        flex: 50%;
         background-image: url("../zg091e000001f5gizE76D.png");
         background-size: 100% 100%;
         position: relative;
@@ -313,7 +325,7 @@ body {
         }
       }
       div:last-child {
-        width: 260px;
+        flex: 50%;
         border-left: 1px solid #f2f2f2;
         background-image: url("../zg081e000001f380z88EC.jpg");
         background-size: 100% 100%;
@@ -364,6 +376,7 @@ body {
         padding-top: 5px;
         a {
           padding: 0 5px;
+          color: #666;
         }
       }
       .copyright {
